@@ -1,2 +1,2 @@
-# UnityTAStool
-Tool Assisted Speedrun tool for gamepad based games
+# UnityTAS
+Tool Assisted Speedrun editor for gamepad based games
