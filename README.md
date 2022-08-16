@@ -41,7 +41,8 @@ On Linux, your persistent data folder should be similar to
 
 1. Create a tasconfig.json in your persistent data folder
 2. Enter your configuration and intructions
-3. Use the on-screen UI for the hotkeys
+3. Make sure your gamepads are disconnected before launching the scene with the TAS editor
+4. Use the on-screen UI for the hotkeys
 
 **Hotkeys**
 
