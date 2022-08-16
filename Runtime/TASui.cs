@@ -18,12 +18,15 @@ namespace UnityTAS
         TASManager tas;
         int frame;
 
-        // Update is called once per frame
+        void Update()
+        {
+            this.speedText.text = this.tas.targetTimeScale.ToString("F2") + "x";
+        }
+
         void FixedUpdate()
         {
             this.frameText.text = "Frame " + this.frame;
             this.instructionText.text = "Instruction " + this.tas.instruction;
-            this.speedText.text = this.tas.targetTimeScale.ToString("F2") + "x";
             this.frame++;
         }
     }
