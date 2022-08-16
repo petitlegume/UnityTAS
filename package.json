@@ -6,7 +6,8 @@
   "author": "Francis Cote-Tremblay",
   "description": "Tool Assisted Speedrun Editor for Unity with gamepad support",
   "dependencies": {
-    "com.unity.inputsystem": "1.3.0"
+    "com.unity.inputsystem": "1.3.0",
+    "com.unity.textmeshpro": "3.0.6"
   },
   "repository": {
     "type": "git",
