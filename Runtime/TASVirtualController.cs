@@ -15,8 +15,8 @@ namespace UnityTAS
         public TASVirtualStick rs;
         [SerializeField]
         public TASVirtualButton rsb;
-        [SerializeField]
-        public TASVirtualStick dpad;
+/*         [SerializeField]
+        public TASVirtualStick dpad; */
         [SerializeField]
         public TASVirtualButton a;
         [SerializeField]
@@ -55,7 +55,7 @@ namespace UnityTAS
             this.rb.emulate(frame.rb);
             this.lt.emulate(frame.lt);
             this.rt.emulate(frame.rt);
-            this.dpad.emulate(frame.dpad);
+            //this.dpad.emulate(frame.dpad);
         }
     }
 }

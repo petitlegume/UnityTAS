@@ -72,7 +72,6 @@ The tasconfig.json have the following properties:
 | rs | No | int [ ] | Right Stick values Eg. ( [ 0.44, -0.2 ] ) |
 | lsb | No | boolean | Left Stick button |
 | rsb | No | boolean | Right Stick button |
-| dpad | No | int [ ] | D-Pad values Eg. ( [ 0.44, -0.2 ] ) |
 | a | No | boolean | A button |
 | b | No | boolean | B button |
 | x | No | boolean | X button |

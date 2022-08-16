@@ -13,8 +13,8 @@ namespace UnityTAS
         [DataMember(EmitDefaultValue = false)]
         public float[]? rs;
         [DataMember(EmitDefaultValue = false)]
-        public float[]? dpad;
-        [DataMember(EmitDefaultValue = false)]
+/*         public float[]? dpad;
+        [DataMember(EmitDefaultValue = false)] */
         public bool? a;
         [DataMember(EmitDefaultValue = false)]
         public bool? b;
