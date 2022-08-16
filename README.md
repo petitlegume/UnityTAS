@@ -2,7 +2,7 @@
 
 **Description**:  UnityTAS is a plug-n-play Tool Assisted Speedrun editor made for game devs who want to add a TAS capability to their games. It is the first and only TAS editor made for Unity. It greatly simplifies the integration of a TAS system to a game.
 
-- **Limitations** : It only works for games that have gamepad support
+- **Limitations** : It only works for games that have gamepad support. Make sure to disconnect all your gamepads before using.
 - **Technology stack**: Unity C# module
 - **Status**: Beta
 
@@ -95,6 +95,10 @@ Example:
  ]
 }
 ```
+
+## Known issues
+
+UnityTAS does not work with a gamepad plugged in. Make sure to disconnect all your gamepads before using.
 
 ## Getting help
 

@@ -61,8 +61,7 @@ namespace UnityTAS
 
         public void Faster()
         {
-            if (this._targetTimeScale < this.originalTimeScale)
-                this._targetTimeScale += 0.1f;
+            this._targetTimeScale += 0.1f;
         }
 
         public void Faster(InputAction.CallbackContext context)
