@@ -1,0 +1,16 @@
+{
+  "name": "com.petitlegume.unitytas",
+  "displayName": "Unity TAS",
+  "version": "0.0.1",
+  "unity": "2021.3",
+  "author": "Francis Cote-Tremblay",
+  "description": "Tool Assisted Speedrun Editor for Unity with gamepad support",
+  "dependencies": {
+    "com.unity.inputsystem": "1.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/petitlegume/UnityTAS.git"
+  },
+  "type": "library"
+}
