@@ -1,4 +1,4 @@
-# UnityTAS
+# UnityTAS 🏃🏽‍♀️🎮🔧
 
 **Description**:  UnityTAS is a plug-n-play Tool Assisted Speedrun editor made for game devs who want to add a TAS capability to their games. It is the first and only TAS editor made for Unity. It greatly simplifies the integration of a TAS system to a game.
 
