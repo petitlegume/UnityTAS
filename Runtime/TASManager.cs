@@ -2,6 +2,7 @@ using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Json;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 namespace UnityTAS
 {
@@ -23,31 +24,51 @@ namespace UnityTAS
         bool paused;
         InputSettings.UpdateMode originalInputUpdateMode;
 
+        public void Restart()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        public void Restart(InputAction.CallbackContext context)
+        {
+            if (!context.started) return;
+            this.Restart();
+        }
         public void TooglePause(InputAction.CallbackContext context)
         {
-            if (context.started)
-            {
-                if (this.paused)
-                    this.Resume();
-                else
-                    this.Pause();
-            }
+            if (!context.started) return;
+            if (this.paused)
+                this.Resume();
+            else
+                this.Pause();
         }
         public void Next(InputAction.CallbackContext context)
         {
-            if (context.started) this.Next();
+            if (!context.started) return;
+            this.Next();
         }
 
         public void Slower()
         {
-            if (this._targetTimeScale >= 0)
-                this._targetTimeScale -= 0.01f;
+            if (this._targetTimeScale >= 0.1f)
+                this._targetTimeScale -= 0.1f;
+        }
+
+        public void Slower(InputAction.CallbackContext context)
+        {
+            if (!context.started) return;
+            this.Slower();
         }
 
         public void Faster()
         {
-            if (this._targetTimeScale <= this.originalTimeScale)
-                this._targetTimeScale += 0.01f;
+            if (this._targetTimeScale < this.originalTimeScale)
+                this._targetTimeScale += 0.1f;
+        }
+
+        public void Faster(InputAction.CallbackContext context)
+        {
+            if (!context.started) return;
+            this.Faster();
         }
 
         public void Pause()
@@ -72,11 +93,11 @@ namespace UnityTAS
         void FixedUpdate()
         {
             if (!ready) return;
-            if (this._instruction >= this.config.frames.Length) return;
+            if (this._instruction >= this.config.instructions.Length) return;
 
-            TASFrame frame = this.config.frames[this._instruction];
+            TASInstruction frame = this.config.instructions[this._instruction];
 
-            if (frame._break != null && (bool)frame._break || this.paused)
+            if ((this.stickyFrames == 0 && frame._break != null && (bool)frame._break) || this.paused)
                 this.Pause();
             else
                 this.Resume();

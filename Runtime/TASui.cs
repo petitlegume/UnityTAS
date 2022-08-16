@@ -23,7 +23,7 @@ namespace UnityTAS
         {
             this.frameText.text = "Frame " + this.frame;
             this.instructionText.text = "Instruction " + this.tas.instruction;
-            this.speedText.text = this.tas.targetTimeScale + "x";
+            this.speedText.text = this.tas.targetTimeScale.ToString("F2") + "x";
             this.frame++;
         }
     }

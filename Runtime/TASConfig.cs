@@ -10,9 +10,7 @@ namespace UnityTAS
     {
         [DataMember(EmitDefaultValue = false)]
         public float? speed;
-        [DataMember(EmitDefaultValue = false)]
-        public int? pauseAt;
         [DataMember()]
-        public TASFrame[] frames;
+        public TASInstruction[] instructions;
     }
 }

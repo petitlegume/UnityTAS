@@ -6,14 +6,14 @@ using UnityEngine;
 namespace UnityTAS
 {
     [DataContract()]
-    public class TASFrame
+    public class TASInstruction
     {
         [DataMember(EmitDefaultValue = false)]
         public float[]? ls;
         [DataMember(EmitDefaultValue = false)]
         public float[]? rs;
         [DataMember(EmitDefaultValue = false)]
-        public float[]? cpad;
+        public float[]? dpad;
         [DataMember(EmitDefaultValue = false)]
         public bool? a;
         [DataMember(EmitDefaultValue = false)]
