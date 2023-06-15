@@ -121,6 +121,7 @@ namespace UnityTAS
                 FileStream file = File.OpenRead(path);
                 DataContractJsonSerializer s = new DataContractJsonSerializer(typeof(TASConfig));
                 this.config = (TASConfig)s.ReadObject(file);
+                file.Close();
                 this.originalTimeScale = Time.timeScale;
                 this._targetTimeScale = this.config.speed != null ? (float)this.config.speed : this.originalTimeScale;
                 this.originalInputUpdateMode = InputSystem.settings.updateMode;
