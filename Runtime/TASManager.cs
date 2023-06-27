@@ -80,6 +80,8 @@ namespace UnityTAS
         public void Next()
         {
             Time.timeScale = this._targetTimeScale;
+            // The next line allows to produce reproducible physics independent on the system load and other variations
+            Time.maximumDeltaTime = Time.fixedDeltaTime;
         }
 
         public void Resume()
@@ -124,8 +126,6 @@ namespace UnityTAS
                 file.Close();
                 this.originalTimeScale = Time.timeScale;
                 this._targetTimeScale = this.config.speed != null ? (float)this.config.speed : this.originalTimeScale;
-                // The next line allows to produce reproducible physics independent on the system load and other variations
-                Time.maximumDeltaTime = Time.fixedDeltaTime;
                 this.originalInputUpdateMode = InputSystem.settings.updateMode;
                 this.ready = true;
             }
