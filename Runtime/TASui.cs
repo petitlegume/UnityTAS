@@ -15,8 +15,9 @@ namespace UnityTAS
         [SerializeField]
         TMP_Text speedText;
         [SerializeField]
+        TMP_Text frameInstructionText;
+        [SerializeField]
         TASManager tas;
-        int frame;
 
         void Update()
         {
@@ -25,9 +26,9 @@ namespace UnityTAS
 
         void FixedUpdate()
         {
-            this.frameText.text = "Frame " + this.frame;
+            this.frameText.text = "Frame " + this.tas.frame;
             this.instructionText.text = "Instruction " + this.tas.instruction;
-            this.frame++;
+            this.frameInstructionText.text = "Instruction frame " + (this.tas.frame - this.tas.instructionFrame);
         }
     }
 }

@@ -10,6 +10,10 @@ namespace UnityTAS
     {
         int _instruction;
         public int instruction { get { return _instruction; } }
+        int _frame;
+        public int frame { get { return _frame; } }
+        int _instructionFrame;
+        public int instructionFrame { get { return _instructionFrame; } }
 
         [SerializeField]
         string fileName = "tasconfig.json";
@@ -111,8 +115,12 @@ namespace UnityTAS
             if (this.stickyFrames > 0)
                 this.stickyFrames--;
             if (this.stickyFrames == 0)
+            {
+                this._instructionFrame = this.frame;
                 this._instruction++;
+            }
 
+            this._frame++;
         }
 
         void Start()
